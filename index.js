@@ -32,27 +32,32 @@ function outputChoice(pathName) {
   if (!tasks) {
     return { 'error reading file': targetPath };
   }
-  tasks = tasks.split(/\n[-\*]/).map((el) => {
-    let weight;
-    try {
-      weight = el.split(']', 1)[0].split('[')[1].trim();
-    } catch (e) {
-      console.log({ e, el });
-    }
-    if (weight === undefined) {
-      return '';
-    }
-    if (weight === 'x' || weight === '-') {
-      weight = 0; //skipped element
-    } else {
-      weight = Number(weight) ? Number(weight) : 1;
-    }
-    let task = '- [' + el;
-    task = el;
-    totalWeight += weight;
-    return { weight, task };
-  });
-
+  tasks = ('- [x] dummy to ignore\n' + tasks)
+    .split(/\n[-\*]\ \[/)
+    .slice(1)
+    .map((el, index) => {
+      let weight;
+      try {
+        weight = el.split(']', 1)[0].trim();
+      } catch (e) {
+        console.log({ e, el });
+      }
+      if (weight === undefined) {
+        return '';
+      }
+      if (weight === 'x' || weight === '-') {
+        weight = 0; //skipped element
+      } else if (weight === ' ' || weight === '') {
+        weight = 1;
+      } else {
+        weight = Number(weight) ? Number(weight) : 0;
+      }
+      let task = '- [' + el;
+      //task = el;
+      totalWeight += weight;
+      return { weight, task };
+    })
+    .filter(({ weight }) => weight > 0);
   const target = Math.ceil(Math.random() * totalWeight);
   let cur = 0;
   for (i = 0; i < tasks.length; i++) {
