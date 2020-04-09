@@ -33,7 +33,15 @@ function outputChoice(pathName) {
     return { 'error reading file': targetPath };
   }
   tasks = tasks.split(/\n[-\*]/).map((el) => {
-    let weight = el.split(']', 1)[0].split('[')[1].trim();
+    let weight;
+    try {
+      weight = el.split(']', 1)[0].split('[')[1].trim();
+    } catch (e) {
+      console.log({ e, el });
+    }
+    if (weight === undefined) {
+      return '';
+    }
     if (weight === 'x' || weight === '-') {
       weight = 0; //skipped element
     } else {
