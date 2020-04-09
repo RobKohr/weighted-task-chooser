@@ -1,0 +1,4 @@
+example:example.md
+example2:example2.md
+in-home-directory:~/TILDE_PATHS_ARENT_WORKING
+some-absolute-path:/Users/jsmith/task-list.md
