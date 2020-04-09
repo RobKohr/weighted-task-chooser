@@ -20,7 +20,7 @@ This will randomly choose one of the parent tasks from that file. It also does w
 
 * npm install
 * cp paths.txt.example paths.txt
-* add a labeled path. Paths can be relative, absolute, or inside of this project
+* add a labeled path in paths.txt. Paths can be relative, absolute, or inside of this project
 
 ## Usage 
 * node index.js PATH_NAME # to run this
