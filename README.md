@@ -29,7 +29,7 @@ This will randomly choose one of the parent tasks from that file. It also does w
 
 * All things to randomize must begin with "- [ ]" or "- [42]" where 42 is the randomized weight of the task
   * tasks without weight are ignored
-  * tasks with "- [x]" are skipped
+  * tasks with "- [x]" or "- [-]" are skipped
 * Only parent tasks are the ones that are randomized, and they are returned with their children and any other content before the next parent tasks
   * a child is something that is indented
 * This was built with markdown in mind, but this could be any plain text file where lines start with "- [ ]  

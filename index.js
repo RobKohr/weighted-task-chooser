@@ -34,7 +34,7 @@ function outputChoice(pathName) {
   }
   tasks = tasks.split(/\n[-\*]/).map((el) => {
     let weight = el.split(']', 1)[0].split('[')[1].trim();
-    if (weight === 'x') {
+    if (weight === 'x' || weight === '-') {
       weight = 0; //skipped element
     } else {
       weight = Number(weight) ? Number(weight) : 1;
