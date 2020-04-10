@@ -28,7 +28,7 @@ This will randomly choose one of the parent tasks from that file. It also does w
 ### task list file structure
 
 * All things to randomize must begin with "- [ ]" or "- [42]" where 42 is the randomized weight of the task
-  * tasks without weight are ignored
+  * tasks without weight are defaulted to 1
   * tasks with "- [x]" or "- [-]" are skipped
 * Only parent tasks are the ones that are randomized, and they are returned with their children and any other content before the next parent tasks
   * a child is something that is indented
