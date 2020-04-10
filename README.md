@@ -1,6 +1,6 @@
 # Weighted Task Chooser
 
-So you have a list of tasks to do in a markdown file:
+So you have a list of tasks to do in a text or markdown file:
 
 ```
 - [ ] Task 1
