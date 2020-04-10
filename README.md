@@ -34,6 +34,6 @@ This will randomly choose one of the parent tasks from that file. It also does w
   * a child is something that is indented
 * This was built with markdown in mind, but this could be any plain text file where lines start with "- [ ]  
 * No space can exist at the beginning of a line
-* Haven't tested with windows files that have different new line characters. Probably needs to modify the regex line splitter for that. 
+* Haven't tested with windows files that have different new line characters. Probably needs to modify the regex line splitter for that. (feel free to create a PR if you do this)
 
 Note: you can also use "* [ ]" instead of "- [ ]" if that is your preference.
